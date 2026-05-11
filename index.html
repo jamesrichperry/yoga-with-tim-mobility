@@ -1,0 +1,669 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Post-Retreat Mobility Course — Yoga with Tim</title>
+  <style>
+    @import url('https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;1,300;1,400;1,500&family=DM+Sans:wght@300;400;500&display=swap');
+
+    /* ── Reset & base ── */
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+    :root {
+      --bg:        #F7F5F1;
+      --text:      #222222;
+      --sand:      #D8C3A5;
+      --taupe:     #A28E7A;
+      --brown:     #6B5445;
+      --sage:      #7A826B;
+      --slate:     #8D99A6;
+      --white:     #ffffff;
+    }
+
+    html { scroll-behavior: smooth; }
+
+    body {
+      background: var(--bg);
+      color: var(--text);
+      font-family: 'DM Sans', sans-serif;
+      font-weight: 300;
+      line-height: 1.7;
+    }
+
+    img { display: block; max-width: 100%; }
+
+    a {
+      color: inherit;
+      text-decoration: none;
+    }
+
+    /* ── Utility ── */
+    .label {
+      font-family: 'DM Sans', sans-serif;
+      font-size: 0.7rem;
+      font-weight: 500;
+      letter-spacing: 0.18em;
+      text-transform: uppercase;
+    }
+
+    .container {
+      max-width: 1140px;
+      margin: 0 auto;
+      padding: 0 2rem;
+    }
+
+    /* ══════════════════════════════
+       NAV
+    ══════════════════════════════ */
+    nav {
+      position: sticky;
+      top: 0;
+      z-index: 100;
+      background: var(--bg);
+      border-bottom: 1px solid var(--sand);
+    }
+
+    .nav-inner {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      height: 64px;
+    }
+
+    .nav-logo {
+      font-family: 'DM Sans', sans-serif;
+      font-size: 0.75rem;
+      font-weight: 500;
+      letter-spacing: 0.2em;
+      text-transform: uppercase;
+      color: var(--text);
+    }
+
+    .nav-links {
+      display: flex;
+      gap: 2.5rem;
+      list-style: none;
+    }
+
+    .nav-links a {
+      font-family: 'DM Sans', sans-serif;
+      font-size: 0.7rem;
+      font-weight: 500;
+      letter-spacing: 0.15em;
+      text-transform: uppercase;
+      color: var(--text);
+      padding-bottom: 2px;
+      border-bottom: 1px solid transparent;
+      transition: border-color 0.25s ease, color 0.25s ease;
+    }
+
+    .nav-links a:hover {
+      border-bottom-color: var(--sage);
+      color: var(--sage);
+    }
+
+    .nav-hamburger {
+      display: none;
+      flex-direction: column;
+      gap: 5px;
+      cursor: pointer;
+      background: none;
+      border: none;
+      padding: 4px;
+    }
+
+    .nav-hamburger span {
+      display: block;
+      width: 22px;
+      height: 1.5px;
+      background: var(--text);
+      transition: opacity 0.2s;
+    }
+
+    /* ══════════════════════════════
+       HERO
+    ══════════════════════════════ */
+    .hero {
+      padding: 7rem 0 6rem;
+      text-align: center;
+    }
+
+    .hero-tag {
+      display: inline-block;
+      color: var(--sage);
+      margin-bottom: 1.75rem;
+    }
+
+    .hero h1 {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: clamp(2.8rem, 6vw, 5.5rem);
+      font-weight: 400;
+      font-style: italic;
+      line-height: 1.1;
+      letter-spacing: -0.01em;
+      color: var(--text);
+      max-width: 16ch;
+      margin: 0 auto 1.75rem;
+    }
+
+    .hero-sub {
+      font-size: 1rem;
+      font-weight: 300;
+      color: var(--taupe);
+      max-width: 52ch;
+      margin: 0 auto 2.75rem;
+      line-height: 1.8;
+    }
+
+    .btn {
+      display: inline-block;
+      font-family: 'DM Sans', sans-serif;
+      font-size: 0.75rem;
+      font-weight: 500;
+      letter-spacing: 0.15em;
+      text-transform: uppercase;
+      padding: 1rem 2.5rem;
+      cursor: pointer;
+      transition: background 0.25s ease, color 0.25s ease;
+    }
+
+    .btn-dark {
+      background: var(--text);
+      color: var(--white);
+      border: 1px solid var(--text);
+    }
+
+    .btn-dark:hover {
+      background: var(--brown);
+      border-color: var(--brown);
+    }
+
+    .btn-light {
+      background: var(--white);
+      color: var(--text);
+      border: 1px solid var(--white);
+    }
+
+    .btn-light:hover {
+      background: var(--sand);
+      border-color: var(--sand);
+      color: var(--text);
+    }
+
+    /* ══════════════════════════════
+       DIVIDER
+    ══════════════════════════════ */
+    .divider {
+      width: 48px;
+      height: 1px;
+      background: var(--sand);
+      margin: 0 auto;
+    }
+
+    /* ══════════════════════════════
+       WHO IT'S FOR
+    ══════════════════════════════ */
+    .who {
+      padding: 6rem 0;
+      text-align: center;
+    }
+
+    .who h2 {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: clamp(2rem, 4vw, 3rem);
+      font-weight: 400;
+      font-style: italic;
+      margin-bottom: 2.5rem;
+      line-height: 1.2;
+    }
+
+    .who-bullets {
+      list-style: none;
+      display: inline-flex;
+      flex-direction: column;
+      gap: 1.1rem;
+      text-align: left;
+    }
+
+    .who-bullets li {
+      display: flex;
+      align-items: flex-start;
+      gap: 0.85rem;
+      font-size: 0.975rem;
+      color: var(--text);
+      max-width: 42ch;
+    }
+
+    .who-bullets li::before {
+      content: '';
+      display: block;
+      flex-shrink: 0;
+      width: 6px;
+      height: 6px;
+      border-radius: 50%;
+      background: var(--sage);
+      margin-top: 0.55rem;
+    }
+
+    /* ══════════════════════════════
+       WHAT'S INCLUDED
+    ══════════════════════════════ */
+    .included {
+      padding: 6rem 0;
+      background: var(--white);
+    }
+
+    .included-header {
+      text-align: center;
+      margin-bottom: 3.5rem;
+    }
+
+    .included-header .label {
+      color: var(--taupe);
+      display: block;
+      margin-bottom: 1rem;
+    }
+
+    .included-header h2 {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: clamp(1.8rem, 3.5vw, 2.6rem);
+      font-weight: 400;
+      font-style: italic;
+      line-height: 1.2;
+    }
+
+    .cards {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 1.5rem;
+    }
+
+    .card {
+      padding: 2rem 1.75rem;
+      border-top: 3px solid var(--sand);
+      background: var(--bg);
+    }
+
+    .card-title {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 1.5rem;
+      font-weight: 500;
+      margin-bottom: 0.75rem;
+      line-height: 1.2;
+    }
+
+    .card p {
+      font-size: 0.9rem;
+      color: var(--taupe);
+      line-height: 1.75;
+    }
+
+    /* ══════════════════════════════
+       ABOUT TIM
+    ══════════════════════════════ */
+    .about {
+      padding: 6rem 0;
+    }
+
+    .about-inner {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 4rem;
+      align-items: center;
+    }
+
+    .about-img {
+      background: var(--sand);
+      aspect-ratio: 3 / 4;
+      width: 100%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+
+    .about-img-placeholder {
+      font-family: 'DM Sans', sans-serif;
+      font-size: 0.7rem;
+      letter-spacing: 0.15em;
+      text-transform: uppercase;
+      color: var(--taupe);
+    }
+
+    .about-content .label {
+      color: var(--taupe);
+      display: block;
+      margin-bottom: 1.25rem;
+    }
+
+    .about-content h2 {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: clamp(1.8rem, 3vw, 2.4rem);
+      font-weight: 400;
+      font-style: italic;
+      line-height: 1.2;
+      margin-bottom: 1.5rem;
+    }
+
+    .about-content p {
+      font-size: 0.95rem;
+      color: var(--taupe);
+      line-height: 1.85;
+      margin-bottom: 1.75rem;
+    }
+
+    .text-link {
+      font-family: 'DM Sans', sans-serif;
+      font-size: 0.8rem;
+      font-weight: 500;
+      letter-spacing: 0.08em;
+      color: var(--sage);
+      border-bottom: 1px solid var(--sage);
+      padding-bottom: 2px;
+      transition: color 0.2s, border-color 0.2s;
+    }
+
+    .text-link:hover {
+      color: var(--brown);
+      border-color: var(--brown);
+    }
+
+    /* ══════════════════════════════
+       TESTIMONIAL
+    ══════════════════════════════ */
+    .testimonial {
+      padding: 7rem 0;
+      text-align: center;
+      background: var(--white);
+    }
+
+    .testimonial blockquote {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: clamp(1.6rem, 3.5vw, 2.5rem);
+      font-weight: 300;
+      font-style: italic;
+      line-height: 1.45;
+      color: var(--text);
+      max-width: 28ch;
+      margin: 0 auto 2rem;
+    }
+
+    .testimonial cite {
+      display: block;
+      font-family: 'DM Sans', sans-serif;
+      font-size: 0.75rem;
+      font-weight: 400;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      color: var(--taupe);
+      font-style: normal;
+    }
+
+    /* ══════════════════════════════
+       CTA SECTION
+    ══════════════════════════════ */
+    .cta-section {
+      background: var(--brown);
+      color: var(--white);
+      text-align: center;
+      padding: 6rem 2rem;
+    }
+
+    .cta-section .label {
+      color: var(--sand);
+      display: block;
+      margin-bottom: 1.25rem;
+    }
+
+    .cta-section h2 {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: clamp(2rem, 4vw, 3.2rem);
+      font-weight: 400;
+      font-style: italic;
+      line-height: 1.2;
+      margin-bottom: 2.25rem;
+    }
+
+    /* ══════════════════════════════
+       FOOTER
+    ══════════════════════════════ */
+    footer {
+      background: var(--text);
+      color: var(--white);
+      padding: 3rem 0;
+    }
+
+    .footer-inner {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 1.5rem;
+      text-align: center;
+    }
+
+    .footer-logo {
+      font-family: 'DM Sans', sans-serif;
+      font-size: 0.75rem;
+      font-weight: 500;
+      letter-spacing: 0.2em;
+      text-transform: uppercase;
+    }
+
+    .footer-links {
+      display: flex;
+      gap: 2rem;
+      list-style: none;
+    }
+
+    .footer-links a {
+      font-size: 0.7rem;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      color: var(--taupe);
+      transition: color 0.2s;
+    }
+
+    .footer-links a:hover {
+      color: var(--sand);
+    }
+
+    .footer-email {
+      font-size: 0.85rem;
+      color: var(--taupe);
+      transition: color 0.2s;
+    }
+
+    .footer-email:hover {
+      color: var(--sand);
+    }
+
+    .footer-copy {
+      font-size: 0.72rem;
+      color: var(--slate);
+      letter-spacing: 0.05em;
+    }
+
+    /* ══════════════════════════════
+       RESPONSIVE
+    ══════════════════════════════ */
+    @media (max-width: 768px) {
+      .nav-links {
+        display: none;
+        position: absolute;
+        top: 64px;
+        left: 0;
+        right: 0;
+        background: var(--bg);
+        flex-direction: column;
+        gap: 0;
+        border-bottom: 1px solid var(--sand);
+        padding: 1rem 0;
+      }
+
+      .nav-links.open {
+        display: flex;
+      }
+
+      .nav-links li {
+        text-align: center;
+        padding: 0.75rem 0;
+      }
+
+      .nav-hamburger {
+        display: flex;
+      }
+
+      .hero {
+        padding: 4.5rem 0 4rem;
+      }
+
+      .cards {
+        grid-template-columns: 1fr;
+        gap: 1rem;
+      }
+
+      .about-inner {
+        grid-template-columns: 1fr;
+        gap: 2.5rem;
+      }
+
+      .about-img {
+        aspect-ratio: 4 / 3;
+      }
+
+      .footer-links {
+        flex-wrap: wrap;
+        justify-content: center;
+        gap: 1.25rem;
+      }
+    }
+
+    @media (max-width: 480px) {
+      .hero h1 {
+        font-size: 2.4rem;
+      }
+
+      .who h2 {
+        font-size: 1.8rem;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- ── NAV ── -->
+  <nav>
+    <div class="container nav-inner">
+      <a href="#" class="nav-logo">Yoga with Tim</a>
+      <button class="nav-hamburger" aria-label="Toggle navigation" onclick="this.closest('nav').querySelector('.nav-links').classList.toggle('open')">
+        <span></span><span></span><span></span>
+      </button>
+      <ul class="nav-links">
+        <li><a href="https://www.timsenesiyoga.com">Home</a></li>
+        <li><a href="https://www.timsenesiyoga.com/membership">Membership</a></li>
+        <li><a href="https://www.timsenesiyoga.com/retreats">Retreats</a></li>
+        <li><a href="https://www.timsenesiyoga.com/about">About</a></li>
+      </ul>
+    </div>
+  </nav>
+
+  <!-- ── HERO ── -->
+  <section class="hero">
+    <div class="container">
+      <span class="hero-tag label">Post-Retreat Mobility Course</span>
+      <h1>Keep the Bali feeling alive in your body</h1>
+      <p class="hero-sub">A dedicated mobility course designed for students returning from the Bali retreat — maintain openness, depth, and ease in your daily practice.</p>
+      <a href="#" class="btn btn-dark">Join the Course</a>
+    </div>
+  </section>
+
+  <div class="divider"></div>
+
+  <!-- ── WHO IT'S FOR ── -->
+  <section class="who">
+    <div class="container">
+      <h2>Designed for Bali retreat alumni</h2>
+      <ul class="who-bullets">
+        <li>You want to maintain the progress you made in Bali</li>
+        <li>You're ready to build a sustainable home practice</li>
+        <li>You want Tim's guidance beyond the retreat</li>
+      </ul>
+    </div>
+  </section>
+
+  <div class="divider"></div>
+
+  <!-- ── WHAT'S INCLUDED ── -->
+  <section class="included">
+    <div class="container">
+      <div class="included-header">
+        <span class="label">The Course</span>
+        <h2>Everything you need to keep moving</h2>
+      </div>
+      <div class="cards">
+        <div class="card">
+          <p class="card-title">30 Video Classes</p>
+          <p>Progressive mobility sequences designed to build on what you experienced in Bali — from gentle openers to deeper work.</p>
+        </div>
+        <div class="card">
+          <p class="card-title">Flexible Access</p>
+          <p>Practice at your own pace, any time. No schedule, no pressure — just your mat, your body, and Tim's guidance.</p>
+        </div>
+        <div class="card">
+          <p class="card-title">Tim's Method</p>
+          <p>Hatha, Vinyasa, and Yin combined — the same integrated approach that made the retreat so transformative.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ── ABOUT TIM ── -->
+  <section class="about">
+    <div class="container">
+      <div class="about-inner">
+        <div class="about-img">
+          <span class="about-img-placeholder">Tim Senesi</span>
+        </div>
+        <div class="about-content">
+          <span class="label">About Tim</span>
+          <h2>A practice built on curiosity and dedication</h2>
+          <p>My yoga journey began in college. I showed up inflexible and intimidated — and instantly fell in love. Since then I've studied with world-class Iyengar teachers, built a YouTube channel with millions of views, and led retreats around the world. This course is my way of staying connected with you after Bali.</p>
+          <a href="https://www.timsenesiyoga.com/about" class="text-link">Learn more about Tim →</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <div class="divider"></div>
+
+  <!-- ── TESTIMONIAL ── -->
+  <section class="testimonial">
+    <div class="container">
+      <blockquote>"Tim's teaching completely changed how I move. The retreat was transformative — and this course helped me bring it home."</blockquote>
+      <cite>— Sarah M., Bali 2025 Retreat</cite>
+    </div>
+  </section>
+
+  <!-- ── CTA ── -->
+  <section class="cta-section">
+    <span class="label">Start Today</span>
+    <h2>Ready to continue your practice?</h2>
+    <a href="#" class="btn btn-light">Join the Course</a>
+  </section>
+
+  <!-- ── FOOTER ── -->
+  <footer>
+    <div class="container footer-inner">
+      <span class="footer-logo">Yoga with Tim</span>
+      <ul class="footer-links">
+        <li><a href="https://www.instagram.com/timsenesiyoga" target="_blank" rel="noopener">Instagram</a></li>
+        <li><a href="https://www.facebook.com/timsenesiyoga" target="_blank" rel="noopener">Facebook</a></li>
+        <li><a href="https://www.youtube.com/timsenesiyoga" target="_blank" rel="noopener">YouTube</a></li>
+      </ul>
+      <a href="mailto:movementwithtim@gmail.com" class="footer-email">movementwithtim@gmail.com</a>
+      <span class="footer-copy">© 2026 Yoga with Tim</span>
+    </div>
+  </footer>
+
+</body>
+</html>
