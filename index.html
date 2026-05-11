@@ -126,41 +126,46 @@
        HERO
     ══════════════════════════════ */
     .hero {
-      padding: 7rem 0 4rem;
-      text-align: center;
+      padding: 5rem 0;
+    }
+
+    .hero-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 4.5rem;
+      align-items: center;
     }
 
     .hero-image {
-      margin-top: 4.5rem;
       width: 100%;
-      aspect-ratio: 16 / 9;
+      aspect-ratio: 4 / 5;
       object-fit: cover;
     }
 
     .hero-tag {
       display: inline-block;
-      color: var(--sage);
-      margin-bottom: 1.75rem;
+      color: var(--green);
+      margin-bottom: 1.5rem;
     }
 
     .hero h1 {
       font-family: 'Cormorant Garamond', serif;
-      font-size: clamp(2.8rem, 6vw, 5.5rem);
+      font-size: clamp(2.4rem, 4.8vw, 4.4rem);
       font-weight: 400;
       font-style: italic;
-      line-height: 1.1;
+      line-height: 1.05;
       letter-spacing: -0.01em;
       color: var(--text);
-      max-width: 16ch;
-      margin: 0 auto 1.75rem;
+      max-width: 14ch;
+      margin: 0 0 1.75rem;
     }
 
     .hero-sub {
       font-size: 1rem;
       font-weight: 300;
       color: var(--muted);
-      max-width: 52ch;
-      margin: 0 auto 2.75rem;
+      max-width: 46ch;
+      margin: 0 0 2.5rem;
       line-height: 1.8;
     }
 
@@ -308,6 +313,34 @@
     }
 
     /* ══════════════════════════════
+       BALI BAND
+    ══════════════════════════════ */
+    .bali-band {
+      width: 100%;
+      height: 60vh;
+      min-height: 380px;
+      max-height: 560px;
+      background-image: url('https://images.unsplash.com/photo-1531895423581-6b72ebb325de?w=2000&q=80&auto=format&fit=crop');
+      background-size: cover;
+      background-position: center;
+      position: relative;
+    }
+
+    .bali-band-caption {
+      position: absolute;
+      bottom: 2.5rem;
+      left: 0;
+      right: 0;
+      text-align: center;
+      color: var(--white);
+      font-family: 'Cormorant Garamond', serif;
+      font-style: italic;
+      font-size: clamp(1.2rem, 2vw, 1.6rem);
+      letter-spacing: 0.02em;
+      text-shadow: 0 1px 12px rgba(0,0,0,0.4);
+    }
+
+    /* ══════════════════════════════
        ABOUT TIM
     ══════════════════════════════ */
     .about {
@@ -401,10 +434,16 @@
        CTA SECTION
     ══════════════════════════════ */
     .cta-section {
-      background: var(--green-dk);
+      background-color: var(--green-dk);
+      background-image:
+        linear-gradient(rgba(63, 70, 54, 0.75), rgba(63, 70, 54, 0.85)),
+        url('https://images.unsplash.com/photo-1604426604630-54fb225d7ea0?w=2000&q=80&auto=format&fit=crop');
+      background-size: cover;
+      background-position: center;
       color: var(--white);
       text-align: center;
-      padding: 6rem 2rem;
+      padding: 7rem 2rem;
+      position: relative;
     }
 
     .cta-section .label {
@@ -512,7 +551,24 @@
       }
 
       .hero {
-        padding: 4.5rem 0 4rem;
+        padding: 3.5rem 0 4rem;
+      }
+
+      .hero-grid {
+        grid-template-columns: 1fr;
+        gap: 2.5rem;
+        text-align: center;
+      }
+
+      .hero h1,
+      .hero-sub {
+        margin-left: auto;
+        margin-right: auto;
+      }
+
+      .hero-image {
+        order: -1;
+        aspect-ratio: 4 / 3;
       }
 
       .cards {
@@ -567,15 +623,17 @@
 
   <!-- ── HERO ── -->
   <section class="hero">
-    <div class="container">
-      <span class="hero-tag label">Post-Retreat Mobility Course</span>
-      <h1>Keep the Bali feeling alive in your body</h1>
-      <p class="hero-sub">A dedicated mobility course designed for students returning from the Bali retreat — maintain openness, depth, and ease in your daily practice.</p>
-      <a href="#" class="btn btn-dark">Join the Course</a>
+    <div class="container hero-grid">
+      <div class="hero-text">
+        <span class="hero-tag label">Post-Retreat Mobility Course</span>
+        <h1>Keep the Bali feeling alive in your body</h1>
+        <p class="hero-sub">A dedicated mobility course designed for students returning from the Bali retreat — maintain openness, depth, and ease in your daily practice.</p>
+        <a href="#" class="btn btn-dark">Join the Course</a>
+      </div>
+      <img class="hero-image"
+           src="https://images.squarespace-cdn.com/content/v1/61ce3da854d89e1889670d7a/1640917749089-4GUATUKKYPF8J7VFS29N/IMG_1737.jpg"
+           alt="Tim Senesi practicing yoga" />
     </div>
-    <img class="hero-image"
-         src="https://images.squarespace-cdn.com/content/v1/61ce3da854d89e1889670d7a/1640917749089-4GUATUKKYPF8J7VFS29N/IMG_1737.jpg"
-         alt="Tim Senesi practicing yoga" />
   </section>
 
   <div class="divider"></div>
@@ -616,6 +674,11 @@
         </div>
       </div>
     </div>
+  </section>
+
+  <!-- ── BALI BAND ── -->
+  <section class="bali-band" aria-label="Uluwatu, Bali">
+    <p class="bali-band-caption">Uluwatu, Bali</p>
   </section>
 
   <!-- ── ABOUT TIM ── -->
