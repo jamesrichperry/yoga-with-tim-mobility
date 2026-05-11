@@ -346,10 +346,16 @@
     .message {
       padding: 4.5rem 0;
       background: var(--bg-soft);
-      text-align: center;
     }
 
-    .message .label {
+    .message-inner {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 4rem;
+      align-items: center;
+    }
+
+    .message-content .label {
       color: var(--green-dk);
       display: block;
       margin-bottom: 1.5rem;
@@ -357,13 +363,12 @@
 
     .message-body {
       font-family: 'Cormorant Garamond', serif;
-      font-size: clamp(1.25rem, 2.2vw, 1.75rem);
+      font-size: clamp(1.25rem, 2vw, 1.65rem);
       font-style: italic;
       font-weight: 300;
-      line-height: 1.55;
+      line-height: 1.6;
       color: var(--text);
-      max-width: 36ch;
-      margin: 0 auto 1.5rem;
+      margin: 0 0 1.5rem;
     }
 
     .message-sign {
@@ -373,6 +378,25 @@
       letter-spacing: 0.18em;
       text-transform: uppercase;
       color: var(--green-dk);
+    }
+
+    .message-img {
+      width: 100%;
+      aspect-ratio: 4 / 5;
+      object-fit: cover;
+      object-position: center top;
+    }
+
+    @media (max-width: 768px) {
+      .message-inner {
+        grid-template-columns: 1fr;
+        gap: 2rem;
+      }
+
+      .message-img {
+        aspect-ratio: 4 / 3;
+        order: -1;
+      }
     }
 
     /* ══════════════════════════════
@@ -718,10 +742,15 @@
 
   <!-- ── PERSONAL MESSAGE ── -->
   <section class="message">
-    <div class="container">
-      <span class="label">A Personal Message from Tim</span>
-      <p class="message-body">"I hope you all enjoyed the Bali retreat as much as I did, and left with lifelong memories, a deeper practice, and a healthier mind and body. This course is my way of staying with you after you've gone home. Wherever you are, whenever you're ready, I'll be there on the mat with you."</p>
-      <span class="message-sign">Tim</span>
+    <div class="container message-inner">
+      <div class="message-content">
+        <span class="label">A Personal Message from Tim</span>
+        <p class="message-body">"I hope you all enjoyed the Bali retreat as much as I did, and left with lifelong memories, a deeper practice, and a healthier mind and body. This course is my way of staying with you after you've gone home. Wherever you are, whenever you're ready, I'll be there on the mat with you."</p>
+        <span class="message-sign">Tim</span>
+      </div>
+      <img class="message-img"
+           src="https://images.squarespace-cdn.com/content/v1/61ce3da854d89e1889670d7a/1640928349246-PA2L7WJFDPQ84KQBYDJC/image_6487327+10.JPG"
+           alt="Tim Senesi at the Bali retreat" />
     </div>
   </section>
 
