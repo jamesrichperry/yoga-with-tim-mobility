@@ -126,8 +126,15 @@
        HERO
     ══════════════════════════════ */
     .hero {
-      padding: 7rem 0 6rem;
+      padding: 7rem 0 4rem;
       text-align: center;
+    }
+
+    .hero-image {
+      margin-top: 4.5rem;
+      width: 100%;
+      aspect-ratio: 16 / 9;
+      object-fit: cover;
     }
 
     .hero-tag {
@@ -315,20 +322,10 @@
     }
 
     .about-img {
-      background: var(--bg-soft);
-      aspect-ratio: 3 / 4;
       width: 100%;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-    }
-
-    .about-img-placeholder {
-      font-family: 'DM Sans', sans-serif;
-      font-size: 0.7rem;
-      letter-spacing: 0.15em;
-      text-transform: uppercase;
-      color: var(--muted);
+      aspect-ratio: 3 / 4;
+      object-fit: cover;
+      background: var(--bg-soft);
     }
 
     .about-content .label {
@@ -576,6 +573,9 @@
       <p class="hero-sub">A dedicated mobility course designed for students returning from the Bali retreat — maintain openness, depth, and ease in your daily practice.</p>
       <a href="#" class="btn btn-dark">Join the Course</a>
     </div>
+    <img class="hero-image"
+         src="https://images.squarespace-cdn.com/content/v1/61ce3da854d89e1889670d7a/1640917749089-4GUATUKKYPF8J7VFS29N/IMG_1737.jpg"
+         alt="Tim Senesi practicing yoga" />
   </section>
 
   <div class="divider"></div>
@@ -622,9 +622,9 @@
   <section class="about">
     <div class="container">
       <div class="about-inner">
-        <div class="about-img">
-          <span class="about-img-placeholder">Tim Senesi</span>
-        </div>
+        <img class="about-img"
+             src="https://images.squarespace-cdn.com/content/v1/61ce3da854d89e1889670d7a/1640985096361-86PVYUHU1XYZDJQ8JGX4/_MG_0210.jpg"
+             alt="Portrait of Tim Senesi" />
         <div class="about-content">
           <span class="label">About Tim</span>
           <h2>A practice built on curiosity and dedication</h2>
