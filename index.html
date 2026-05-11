@@ -11,13 +11,14 @@
     *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
 
     :root {
-      --bg:        #F7F5F1;
+      --bg:        #FFFFFF;
+      --bg-soft:   #F4F6F1;
       --text:      #222222;
-      --sand:      #D8C3A5;
-      --taupe:     #A28E7A;
-      --brown:     #6B5445;
+      --muted:     #5E6B55;
       --sage:      #7A826B;
-      --slate:     #8D99A6;
+      --green:     #4F5C44;
+      --green-dk:  #2E3826;
+      --line:      #DDE4D5;
       --white:     #ffffff;
     }
 
@@ -61,7 +62,7 @@
       top: 0;
       z-index: 100;
       background: var(--bg);
-      border-bottom: 1px solid var(--sand);
+      border-bottom: 1px solid var(--line);
     }
 
     .nav-inner {
@@ -150,7 +151,7 @@
     .hero-sub {
       font-size: 1rem;
       font-weight: 300;
-      color: var(--taupe);
+      color: var(--muted);
       max-width: 52ch;
       margin: 0 auto 2.75rem;
       line-height: 1.8;
@@ -169,14 +170,14 @@
     }
 
     .btn-dark {
-      background: var(--text);
+      background: var(--green-dk);
       color: var(--white);
-      border: 1px solid var(--text);
+      border: 1px solid var(--green-dk);
     }
 
     .btn-dark:hover {
-      background: var(--brown);
-      border-color: var(--brown);
+      background: var(--sage);
+      border-color: var(--sage);
     }
 
     .btn-light {
@@ -186,9 +187,9 @@
     }
 
     .btn-light:hover {
-      background: var(--sand);
-      border-color: var(--sand);
-      color: var(--text);
+      background: var(--bg-soft);
+      border-color: var(--bg-soft);
+      color: var(--green-dk);
     }
 
     /* ══════════════════════════════
@@ -197,7 +198,7 @@
     .divider {
       width: 48px;
       height: 1px;
-      background: var(--sand);
+      background: var(--sage);
       margin: 0 auto;
     }
 
@@ -251,7 +252,7 @@
     ══════════════════════════════ */
     .included {
       padding: 6rem 0;
-      background: var(--white);
+      background: var(--bg-soft);
     }
 
     .included-header {
@@ -260,7 +261,7 @@
     }
 
     .included-header .label {
-      color: var(--taupe);
+      color: var(--muted);
       display: block;
       margin-bottom: 1rem;
     }
@@ -281,8 +282,8 @@
 
     .card {
       padding: 2rem 1.75rem;
-      border-top: 3px solid var(--sand);
-      background: var(--bg);
+      border-top: 3px solid var(--sage);
+      background: var(--white);
     }
 
     .card-title {
@@ -295,7 +296,7 @@
 
     .card p {
       font-size: 0.9rem;
-      color: var(--taupe);
+      color: var(--muted);
       line-height: 1.75;
     }
 
@@ -314,7 +315,7 @@
     }
 
     .about-img {
-      background: var(--sand);
+      background: var(--bg-soft);
       aspect-ratio: 3 / 4;
       width: 100%;
       display: flex;
@@ -327,11 +328,11 @@
       font-size: 0.7rem;
       letter-spacing: 0.15em;
       text-transform: uppercase;
-      color: var(--taupe);
+      color: var(--muted);
     }
 
     .about-content .label {
-      color: var(--taupe);
+      color: var(--muted);
       display: block;
       margin-bottom: 1.25rem;
     }
@@ -347,7 +348,7 @@
 
     .about-content p {
       font-size: 0.95rem;
-      color: var(--taupe);
+      color: var(--muted);
       line-height: 1.85;
       margin-bottom: 1.75rem;
     }
@@ -364,8 +365,8 @@
     }
 
     .text-link:hover {
-      color: var(--brown);
-      border-color: var(--brown);
+      color: var(--green-dk);
+      border-color: var(--green-dk);
     }
 
     /* ══════════════════════════════
@@ -374,7 +375,7 @@
     .testimonial {
       padding: 7rem 0;
       text-align: center;
-      background: var(--white);
+      background: var(--bg-soft);
     }
 
     .testimonial blockquote {
@@ -395,7 +396,7 @@
       font-weight: 400;
       letter-spacing: 0.12em;
       text-transform: uppercase;
-      color: var(--taupe);
+      color: var(--muted);
       font-style: normal;
     }
 
@@ -403,14 +404,14 @@
        CTA SECTION
     ══════════════════════════════ */
     .cta-section {
-      background: var(--brown);
+      background: var(--green-dk);
       color: var(--white);
       text-align: center;
       padding: 6rem 2rem;
     }
 
     .cta-section .label {
-      color: var(--sand);
+      color: var(--line);
       display: block;
       margin-bottom: 1.25rem;
     }
@@ -428,7 +429,7 @@
        FOOTER
     ══════════════════════════════ */
     footer {
-      background: var(--text);
+      background: var(--green-dk);
       color: var(--white);
       padding: 3rem 0;
     }
@@ -459,27 +460,27 @@
       font-size: 0.7rem;
       letter-spacing: 0.12em;
       text-transform: uppercase;
-      color: var(--taupe);
+      color: var(--muted);
       transition: color 0.2s;
     }
 
     .footer-links a:hover {
-      color: var(--sand);
+      color: var(--sage);
     }
 
     .footer-email {
       font-size: 0.85rem;
-      color: var(--taupe);
+      color: var(--muted);
       transition: color 0.2s;
     }
 
     .footer-email:hover {
-      color: var(--sand);
+      color: var(--sage);
     }
 
     .footer-copy {
       font-size: 0.72rem;
-      color: var(--slate);
+      color: var(--muted);
       letter-spacing: 0.05em;
     }
 
@@ -496,7 +497,7 @@
         background: var(--bg);
         flex-direction: column;
         gap: 0;
-        border-bottom: 1px solid var(--sand);
+        border-bottom: 1px solid var(--line);
         padding: 1rem 0;
       }
 
